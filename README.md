@@ -17,17 +17,17 @@ Generating a CAPTCHA and saving
 
 Python
 
-    from capgen import generate
-    image, text = generate(length=6) # Generate a CAPTCHA with 6 characters
+    import capgen
+    image, text = capgen.generate(length=6) # Generate a CAPTCHA with 6 characters
     image.save('captcha.png') # Save the CAPTCHA image
     print(text) # Print the CAPTCHA text
  
 ## Integration
 
  1. Call the generate function to generate a CAPTCHA image and text.
- 2. Store the CAPTCHA text in your application's session or database.
+ 2. Store the CAPTCHA text with hash of the image as unique id in your application's session or database.
  3. Display the CAPTCHA image to the user. 
- 4. Verify the user's input against the stored CAPTCHA text.
+ 4. Verify the user's input against the stored CAPTCHA text identified by the hash.
 
 ## Example Use Cases
 
